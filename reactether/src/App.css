@@ -1,0 +1,152 @@
+*,
+*::after,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary :#21315c;
+    --color-primary-ligth : rgba(21, 83, 158, 0.2);
+    --color-secondary : #f7f7f7;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-primary);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+
+
+.tab-menu{
+    border-radius: 10rem;
+    padding: 1rem 2rem;
+    background-color: var(--color-secondary);
+    box-shadow: 0 0 1rem rgba(0,0,0,.1);
+}
+
+
+.tab-menu__list{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+
+.tab-menu__item{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: #222;
+    border-radius: 4rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+.tab-menu__icon{
+    transform: translateY(2px);
+}
+
+.tab-menu__text{
+    display: none;
+}
+
+.tab-menu__active{
+    padding: 1rem 2rem;
+    color: var(--color-primary);
+    background-color: var(--color-primary-ligth)
+}
+
+.tab-menu__active .tab-menu__text{
+    display: block;
+}
+
+.btn-watch-now{
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    text-decoration: none;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2.4rem;
+    color: red;
+    background-color: #fff;
+}
+
+.btn-watch-now::after,
+.btn-watch-now::before{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid #fff;
+    animation: scaling 1s infinite;
+    z-index: -1;
+}
+
+
+.btn-watch-now::before{
+    animation: scaling 1s .2s infinite;
+}
+
+
+.accountLink{
+  display: none;
+}
+
+.features{
+  padding: 10px;
+}
+
+.account-menu{
+  border-radius: 10rem;
+  padding: 0.1rem 3rem;
+  background-color: var(--color-secondary);
+  box-shadow: 0 0 1rem rgba(0,0,0,.1);
+}
+
+
+.account-menu__list{
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.account-menu__item{
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  color: #222;
+  border-radius: 4rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+@keyframes scaling {
+    0%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+
+    100%{
+        transform: translate(-50%,-50%) scale(1.2);
+        opacity: 0;
+    }
+}
