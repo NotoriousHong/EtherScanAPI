@@ -2,11 +2,15 @@ import './App.css';
 
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { RiAccountCircleLine, RiFilePaper2Line, RiExchangeBoxLine } from "react-icons/ri";
 
-// router로 경로 지정한 account, contract, transaction은 pages폴더에서 import해옴
+
+// router로 경로 지정한 /account, /contract, /transaction은 pages폴더에서 import해옴
 import Account from './pages/account.js'
 import Contract from './pages/contract.js'
 import Transaction from './pages/transaction.js'
+
+
 
 
 
@@ -29,22 +33,30 @@ function App() {
 
     <BrowserRouter>
             <div>
-            {/* <div className="header">Ether Scan</div> */}
+            <h1 className="header">EtherScan</h1>
 
               <div className="tab-menu">
+
                 <ul className="tab-menu__list">
                   <li className="tab-menu__item">
-                    <span className="tab-menu__icon"><Link to="/account">Account</Link><i className="ri-home-line"></i></span>
+                    <span className="tab-menu__icon">
+                      <Link to="/account"><RiAccountCircleLine/></Link>
+                      <i className="ri-home-line"></i>
+                    </span>
                     <span className="tab-menu__text"></span>
                   </li>
 
                   <li className="tab-menu__item">
-                    <span className="tab-menu__icon"><Link to="/contract">Contract</Link><i className="ri-heart-3-line"></i></span>
+                    <span className="tab-menu__icon">
+                      <Link to="/contract"><RiFilePaper2Line/></Link>
+                    </span>
                     <span className="tab-menu__text"></span>
                   </li>
 
                   <li className="tab-menu__item">
-                    <span className="tab-menu__icon"><Link to="/transaction">Transaction</Link><i className="ri-search-line"></i></span>
+                    <span className="tab-menu__icon">
+                      <Link to="/transaction"><RiExchangeBoxLine/></Link>
+                    </span>
                     <span className="tab-menu__text"></span>
                   </li>
                 </ul>

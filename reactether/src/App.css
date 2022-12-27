@@ -21,6 +21,37 @@ body{
 }
 
 
+.header{
+    font-size: 40px; 
+    margin-bottom: 20px;
+    position: relative;
+    left: 8%;
+    color: #c8c8c7;
+}
+
+h1.header:before,
+h1.header:after {
+  content: '[';
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  height: 100%;
+  font-size: 1.4em;
+  color: #979695;
+  
+  transition: all 0.5s ease;
+}
+
+h1.header:after { content: ']'; }
+
+h1.header:hover:before { 
+    transform: translateX(-15px);
+  }
+  
+  h1.header:hover:after { 
+    transform: translateX(15px);
+  }
+
 
 .tab-menu{
     border-radius: 10rem;
